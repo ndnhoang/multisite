@@ -1,0 +1,152 @@
+2018-08-06T07:29:05+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:29:12+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:29:14+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:29:24+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:29:56+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:29:57+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:30:10+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:31:04+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:12
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:33:23+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:45+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:47+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:47+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:48+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:48+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:48+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:48+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:48+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:48+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
+2018-08-06T07:37:54+00:00 CRITICAL Uncaught Error: Call to undefined function redirect() in /var/www/html/multisite/wp-content/themes/f45/template-parts/register.php:9
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template-loader.php(74): include()
+#1 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#2 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#3 {main}
+  thrown
+
