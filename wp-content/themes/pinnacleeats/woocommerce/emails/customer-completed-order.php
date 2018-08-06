@@ -27,11 +27,6 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <p><?php printf( __( "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference:", 'woocommerce' ), get_option( 'blogname' ) ); ?></p>
 
-<?php global $wpdb;
-$data = $wpdb->get_row("SELECT * FROM custom_credit WHERE order_id = ".$order->ID." AND type = 2");
-if ($data && $data->credit > 0) : ?>
-	<p><?php _e( "You have awarded ".number_format($data->credit, 0, '.', ',')." credit(s) for this order.", 'woocommerce' ); ?></p>
-<?php endif; ?>
 
 <?php
 

@@ -19,7 +19,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-WC()->cart->calculate_totals();
 ?>
 <div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 

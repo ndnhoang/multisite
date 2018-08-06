@@ -20,12 +20,12 @@ defined( 'ABSPATH' ) || exit;
 wc_print_notices();
 
 do_action( 'woocommerce_before_cart' );
-$user = wp_get_current_user();
+
 ?>
 
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
-	<div class="credit-msg">You have <strong><?php echo get_user_meta($user->ID, 'credit', true) ? get_user_meta($user->ID, 'credit', true) : 0; ?></strong> Credit(s)</div>
+	
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 		<thead>
 			<tr>
@@ -142,36 +142,6 @@ $user = wp_get_current_user();
 						</div>
 					<?php } ?>
 
-						<div class="custom-credit">
-							<?php $custom_credit_credit = get_option('custom_credit_credit');
-							$custom_credit_credit = floatval($custom_credit_credit);
-							$coupons = WC()->cart->get_coupon_discount_totals();
-							$coupon_amount = 0;
-							if ($coupons) {
-								foreach ($coupons as $item) {
-									$coupon_amount += floatval($item);
-								}
-							}
-							$subtotal = WC()->cart->get_subtotal();
-							$subtotal -= $coupon_amount;
-							if ($subtotal < 0) $subtotal = 0;
-							$credit_number_max = ceil($subtotal / $custom_credit_credit);
-							session_start();
-							if (isset($_SESSION['credit_number'])) { 
-								$current_credit = intval($_SESSION['credit_number']);
-								if ($current_credit > $credit_number_max) {
-									$current_credit = $credit_number_max;
-									$_SESSION['credit_number'] = $current_credit;
-								}
-								if ($subtotal == 0) {
-									$_SESSION['credit_number'] = 0;
-									$_SESSION['credit'] = 0;
-								}
-							}
-							?>
-							<label for="credit_number"><?php esc_html_e( 'Credit:', 'woocommerce' ); ?></label> <input type="number" name="credit_number" class="input-text" id="credit_number" value="<?php echo (isset($_SESSION['credit_number']) && $_SESSION['credit_number'] > 0) ? $_SESSION['credit_number'] : ''; ?>" min="0" max="<?php echo $credit_number_max; ?>" placeholder="<?php esc_attr_e( 'Credit number', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_credit" value="<?php esc_attr_e( 'Apply credit', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply credit', 'woocommerce' ); ?></button>
-								<?php do_action( 'woocommerce_cart_coupon' ); ?>
-						</div>
 
 					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 

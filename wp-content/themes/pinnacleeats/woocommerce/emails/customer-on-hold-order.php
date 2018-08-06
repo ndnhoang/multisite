@@ -26,11 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <p><?php _e( "Your order is on-hold until we confirm payment has been received. Your order details are shown below for your reference:", 'woocommerce' ); ?></p>
-<?php global $wpdb;
-$data = $wpdb->get_row("SELECT * FROM custom_credit WHERE order_id = ".$order->ID." AND status = 0 AND type = 1");
-if ($data && $data->credit > 0) : ?>
-	<p><?php _e( "You have used ".number_format($data->credit, 0, '.', ',')." credit(s) for this order.", 'woocommerce' ); ?></p>
-<?php endif; ?>
+
 <?php
 
 /**

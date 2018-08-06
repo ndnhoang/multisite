@@ -32,11 +32,7 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 		printf( __( 'Hi there. Your order on %s has been refunded.', 'woocommerce' ), get_option( 'blogname' ) );
 	}
 ?></p>
-<?php global $wpdb;
-$data = $wpdb->get_row("SELECT * FROM custom_credit WHERE order_id = ".$order->ID." AND status = 0 AND type = 1");
-if ($data && $data->credit > 0) : ?>
-	<p><?php _e( "You have refunded ".number_format($data->credit, 0, '.', ',')." credit(s) for this order.", 'woocommerce' ); ?></p>
-<?php endif; ?>
+
 <?php
 
 /**

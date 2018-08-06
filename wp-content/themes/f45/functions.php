@@ -45,7 +45,7 @@ add_action( 'widgets_init', 'blog_widgets_init' );
 function blog_scripts() {		
 	wp_enqueue_style( 'blog-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bootstrap.min.css', get_template_directory_uri().'/css/bootstrap.min.css' );
-	wp_enqueue_style( 'main.css', get_template_directory_uri().'/css/main.css' );
+	wp_enqueue_style( 'main.css', get_template_directory_uri().'/css/build/css/main.css' );
 
 	wp_enqueue_script( 'bootstrap.min.js', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'), '3.8', true );
 	wp_enqueue_script( 'main.js', get_template_directory_uri().'/js/main.js',array('jquery'), '3.8', true );
@@ -131,4 +131,63 @@ add_action('before_signup_header', 'mbdr_redirect_signup_home');
 function mbdr_redirect_signup_home(){
     wp_redirect( get_site_url() );
     exit();
+}
+
+function checkRegister($username, $password, $confirmPassword) {
+	global $wpdb;
+	$username = esc_sql(trim($username));
+	$password = esc_sql(trim($password));
+	$confirmPassword = esc_sql(trim($confirmPassword));
+	$error = "";
+	if(username_exists($username)){
+		$error = "Username exist";
+	} elseif ($password != $confirmPassword) {
+		$error = "Password not equal";
+	} else {
+		$user_id = wp_insert_user( array ( 
+            'user_login' => apply_filters('pre_user_user_login', $username), 
+            'user_pass' => apply_filters('pre_user_pass', $password)
+            ) 
+        );	
+	    do_action('user_register', $user_id);
+
+	    $member = new WP_User($user_id);
+		$member->set_role('subscriber');
+	    $member->data->display_name = $username;
+		wp_update_user($member);
+
+        $creds = array( 'user_login' =>  $username, 'user_password' => $password, 'remember' => true );
+	    wp_signon( $creds );
+	}
+	return $error;
+}
+
+function checkLogin($username, $password, $remember) {
+	$password = apply_filters('pre_user_pass', $password);
+	if($remember == 1){
+		$check = true;	
+	} else {
+		$check = false;	
+	}
+	$user = get_user_by("login", $username);
+	$checkUser = true;
+	if ($user) {
+		$user = new WP_User($user->ID,'',get_current_blog_id());
+		if ($user->caps == null) {
+			$checkUser = false;
+		}
+	} else {
+		$checkUser = false;
+	}
+	if ($checkUser) {
+		$creds = array( 'user_login' =>  $username, 'user_password' => $password, 'remember' => $check );
+		$status = wp_signon( $creds );
+		if (is_wp_error($status)) {  
+		    return false;
+		} else {
+			return true;
+		}
+	} else {
+		return false;
+	}
 }

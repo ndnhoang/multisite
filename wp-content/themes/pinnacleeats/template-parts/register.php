@@ -9,29 +9,17 @@ if (is_user_logged_in()) {
 	wp_redirect(home_url());
 	exit;
 }
-if (isset($_POST)) {
+if (isset($_POST["register"])) {
 	$username = $_POST['username'];
-	$email = $_POST['email'];
 	$password = $_POST['password'];
-	$confirm_password = $_POST['confirm'];
-	if ($confirm_password == $password) {
-		if (email_exists($email)) {
-			echo '<div class="alert alert-danger alert-dismissible"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Email exists</div>';
-		} elseif (username_exists($username)) {
-			echo '<div class="alert alert-danger alert-dismissible"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Username exists</div>';
-		} else {
-			$password_hash = md5($password);
-			$user_id = register_new_user($username, $email);
-			wp_set_password($password_hash, $user_id);
-			$user = array(
-				'user_login' => $username,
-				'user_password' => $password_hash,
-				'remember' => false
-			);
-			wp_signon($user, false);
-		}
+	$confirmPassword = $_POST['confirm'];
+	$status = checkRegister($username, $password, $confirmPassword);
+	if ($status == "") {
+		global $wp;
+		wp_redirect(home_url( $wp->request ));
+		exit;
 	} else {
-		echo '<div class="alert alert-danger alert-dismissible"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Password not equal</div>';
+		echo '<div class="alert alert-danger alert-dismissible"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.$status.'</div>';
 	}
 }
 get_header(); ?>
@@ -44,10 +32,6 @@ get_header(); ?>
 			<input type="text" name="username" required class="form-control">
 		</div>
 		<div class="form-group">
-			<label>Email:</label>
-			<input type="email" name="email" required class="form-control">
-		</div>
-		<div class="form-group">
 			<label>Password:</label>
 			<input type="password" name="password" required class="form-control">
 		</div>
@@ -56,7 +40,7 @@ get_header(); ?>
 			<input type="password" name="confirm" required class="form-control">
 		</div>
 		<div>
-			<button type="submit" class="btn btn-primary">Sign up</button>
+			<button type="submit" name="register" class="btn btn-primary">Sign up</button>
 		</div>
 	</form>
 </div>

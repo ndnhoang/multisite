@@ -31,3 +31,12 @@ header {
 		border: 1px solid #ccc;
 	}
 }
+.woocommerce .col-2, .woocommerce .col-1 {
+	max-width: 100%;
+}
+.woocommerce form .form-row label, .woocommerce-page form .form-row label {
+	width: 100%;
+}
+.woocommerce-input-wrapper {
+	width: 100%;
+}
