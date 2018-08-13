@@ -1,0 +1,24 @@
+2018-08-07T02:43:08+00:00 CRITICAL Uncaught Error: Call to undefined function blog_info() in /var/www/html/multisite/wp-content/themes/f45/header.php:33
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template.php(688): require_once()
+#1 /var/www/html/multisite/wp-includes/template.php(647): load_template('/var/www/html/m...', true)
+#2 /var/www/html/multisite/wp-includes/general-template.php(41): locate_template(Array, true)
+#3 /var/www/html/multisite/wp-content/themes/f45/woocommerce/archive-product.php(20): get_header('shop')
+#4 /var/www/html/multisite/wp-includes/template-loader.php(74): include('/var/www/html/m...')
+#5 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#6 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#7 {main}
+  thrown
+
+2018-08-07T02:43:10+00:00 CRITICAL Uncaught Error: Call to undefined function blog_info() in /var/www/html/multisite/wp-content/themes/f45/header.php:33
+Stack trace:
+#0 /var/www/html/multisite/wp-includes/template.php(688): require_once()
+#1 /var/www/html/multisite/wp-includes/template.php(647): load_template('/var/www/html/m...', true)
+#2 /var/www/html/multisite/wp-includes/general-template.php(41): locate_template(Array, true)
+#3 /var/www/html/multisite/wp-content/themes/f45/woocommerce/archive-product.php(20): get_header('shop')
+#4 /var/www/html/multisite/wp-includes/template-loader.php(74): include('/var/www/html/m...')
+#5 /var/www/html/multisite/wp-blog-header.php(19): require_once('/var/www/html/m...')
+#6 /var/www/html/multisite/index.php(17): require('/var/www/html/m...')
+#7 {main}
+  thrown
+

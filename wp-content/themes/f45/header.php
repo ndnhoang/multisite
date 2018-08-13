@@ -30,6 +30,7 @@ $item_in_cart = $woocommerce->cart->cart_contents_count;
     <div id="wrapper">
       <header>
         <div class="container text-right">
+          <h1 class="float-left"><?php echo bloginfo('name'); ?></h1>
           <ul class="user-menu">
             <li><a href="<?php echo home_url(); ?>">Home</a></li>
             <li><a href="<?php echo $cart_url; ?>"><span class="item-cart"><?php echo $item_in_cart; ?></span> Item(s)</a></li>

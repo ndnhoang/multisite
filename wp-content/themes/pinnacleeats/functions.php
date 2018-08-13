@@ -41,6 +41,7 @@ function blog_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'blog_widgets_init' );
+
 //enqueue scripts
 function blog_scripts() {		
 	wp_enqueue_style( 'blog-style', get_stylesheet_uri() );
@@ -51,6 +52,7 @@ function blog_scripts() {
 	wp_enqueue_script( 'main.js', get_template_directory_uri().'/js/main.js',array('jquery'), '3.8', true );
 }
 add_action( 'wp_enqueue_scripts', 'blog_scripts' );
+
 // admin scripts
 add_action( 'admin_enqueue_scripts', 'custom_admin_scripts' );
 function custom_admin_scripts() {
@@ -71,6 +73,7 @@ require get_template_directory() . '/BFI_Thumb.php';
  * Shortcode
  */
 require_once get_template_directory() . '/inc/shortcode.php';
+
 //hide adminbar
 add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
@@ -78,34 +81,40 @@ function remove_admin_bar() {
 	  show_admin_bar(false);
 	}
 }
+
 //filter logout
 add_action( 'wp_logout', 'auto_redirect_external_after_logout');
 function auto_redirect_external_after_logout(){
   wp_redirect(home_url());
   exit();
 }
+
 //filter wp mail html
 add_filter('wp_mail_content_type','wpdocs_set_html_mail_content_type');
 function wpdocs_set_html_mail_content_type($content_type){
 	return 'text/html';
 }
+
 //funtion crop_img
 function crop_img($w, $h, $url_img){
  $params = array( 'width' => $w, 'height' => $h, 'crop' => true);
  return bfi_thumb($url_img, $params );
 }
-//funtion crop_img
+
+//funtion get favicon
 function get_favicon(){
     global $blog_option;
     $favicon  = $blog_option['favicon'];
     echo '<link rel="icon" type="image/png" href="'.$favicon['url'].'" sizes="32x32"/>';
 }
+
 //update version acf
 function my_acf_init() {	
 	acf_update_setting('select2_version', 4);	
 	acf_update_setting('google_api_key', 'AIzaSyD9pVsP-Sh5vKDOU_6mGP3weZYs9qsX2wE');
 }
 add_action('acf/init', 'my_acf_init');
+
 // fix woocommerce lastest
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
@@ -120,6 +129,19 @@ function iconic_cart_count_fragments( $fragments ) {
     return $fragments;   
 }
 
+// redirect register in wp-admin  back to home
+add_filter( 'wp_signup_location', 'mbdr_current_blog_home' );
+function mbdr_current_blog_home($location) {
+    return get_site_url();
+}
+ 
+add_action('before_signup_header', 'mbdr_redirect_signup_home');
+function mbdr_redirect_signup_home(){
+    wp_redirect( get_site_url() );
+    exit();
+}
+
+// function register
 function checkRegister($username, $password, $confirmPassword) {
 	global $wpdb;
 	$username = esc_sql(trim($username));
@@ -127,9 +149,9 @@ function checkRegister($username, $password, $confirmPassword) {
 	$confirmPassword = esc_sql(trim($confirmPassword));
 	$error = "";
 	if(username_exists($username)){
-		$error = "Username exist";
+		$error = "Username already exists";
 	} elseif ($password != $confirmPassword) {
-		$error = "Password not equal";
+		$error = "Confirm the password incorrectly";
 	} else {
 		$user_id = wp_insert_user( array ( 
             'user_login' => apply_filters('pre_user_user_login', $username), 
@@ -149,6 +171,7 @@ function checkRegister($username, $password, $confirmPassword) {
 	return $error;
 }
 
+// function login
 function checkLogin($username, $password, $remember) {
 	$password = apply_filters('pre_user_pass', $password);
 	if($remember == 1){

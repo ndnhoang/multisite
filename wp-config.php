@@ -26,7 +26,7 @@ define('DB_NAME', 'multisite');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'nlstech888');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -85,10 +85,13 @@ define('WP_DEBUG', false);
 
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE', 'localhost');
+define('DOMAIN_CURRENT_SITE', '192.168.0.117');
 define('PATH_CURRENT_SITE', '/multisite/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
+
+define('WP_HOME','http://192.168.0.117/multisite');
+define('WP_SITEURL','http://192.168.0.117/multisite');
 
 /* That's all, stop editing! Happy blogging. */
 

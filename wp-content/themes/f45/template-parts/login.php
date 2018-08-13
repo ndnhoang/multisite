@@ -17,7 +17,7 @@ if (isset($_POST["login"])) {
 		wp_redirect(home_url( $wp->request ));
 		exit;
 	} else {
-		echo '<div class="alert alert-danger alert-dismissible"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Username or password not correct!</div>';
+		echo '<div class="alert alert-danger alert-dismissible"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Username or password incorrect!</div>';
 	}
 }
 get_header(); ?>
